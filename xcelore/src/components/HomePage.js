@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
-import {
-  Box,
-  Container,
-  Typography,
-  IconButton,
-  Tooltip,
-  Button,
-  Modal,
-  TextField,
-} from '@mui/material';
+import {Box,Container, Typography,IconButton, Tooltip, Button, Modal, TextField,} from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
@@ -73,11 +64,11 @@ const HomePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting new user:', newUser); // Log new user data before sending the request
+    console.log('Submitting new user:', newUser);
     try {
       const response = await axios.post('http://localhost:4000/api/v1/create', newUser);
       console.log('User added successfully:', response.data);
-      setUsers([...users, response.data.data]); // Update the users list
+      setUsers([...users, response.data.data]); 
       handleClose();
     } catch (error) {
       console.error('Error adding new user:', error);
