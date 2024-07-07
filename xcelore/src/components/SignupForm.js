@@ -10,8 +10,7 @@ const SignupForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted");
-    
+    console.log("Form submitted");   
     try {
       const payload = { firstName, lastName, email, password };
       console.log("Payload:", payload);
@@ -33,7 +32,6 @@ const SignupForm = () => {
 
       const data = await response.json();
       toast.success(data.message);
-      // Optionally, you can navigate to another page after successful signup
     } catch (error) {
       console.error('Error:', error);
       toast.error('Failed to register');
