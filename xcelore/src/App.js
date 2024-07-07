@@ -10,7 +10,7 @@ import SignupForm from './components/SignupForm';
 import Sidebar from './components/Sidebar';
 
 const App = () => {
-  const { isAuthenticated } = useAuth(); // Assuming useAuth provides isAuthenticated state
+  const { isAuthenticated } = useAuth(); 
 
   return (
     <Router>
@@ -18,7 +18,6 @@ const App = () => {
       { isAuthenticated && <Sidebar /> }
       <div style={{ flex: 1, marginLeft: isAuthenticated ? 240 : 0 }}>
       <Routes>
-        {/* Define your routes */}
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/user-dashboard" element={<ProtectedRoute element={<UserDashboard />} requiredRole="user" />} />
